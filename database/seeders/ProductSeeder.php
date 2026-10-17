@@ -1,0 +1,311 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Database\Seeder;
+
+class ProductSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $products = [
+            [
+                'category' => 'electronics', 'brand' => 'apple',
+                'name' => 'Apple AirPods Pro (2nd Generation)', 'slug' => 'apple-airpods-pro-2nd-gen', 'sku' => 'APL-APP2',
+                'short_description' => 'Active Noise Cancelling wireless earbuds with adaptive transparency and personalized spatial audio.',
+                'description' => '<p>AirPods Pro (2nd generation) feature up to 2x more Active Noise Cancellation, Adaptive Transparency, and Personalized Spatial Audio for immersive sound.</p><ul><li>Up to 6 hours of listening time on a single charge</li><li>MagSafe charging case with speaker and lanyard loop</li><li>Sweat and water resistant (IP54)</li><li>Touch control for volume, calls, and music</li></ul>',
+                'price' => 249.00, 'discount_price' => 179.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B0BDHWDR12?tag=youraffiliateid-20',
+                'badge' => "Amazon's Choice", 'rating' => 4.7, 'rating_count' => 18452,
+                'is_featured' => true, 'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1590658268037-6bf12165a8df', '1505740420928-5e560c06d30e'],
+            ],
+            [
+                'category' => 'electronics', 'brand' => 'samsung',
+                'name' => 'Samsung Galaxy Buds2 Pro', 'slug' => 'samsung-galaxy-buds2-pro', 'sku' => 'SAM-GB2P',
+                'short_description' => 'True wireless earbuds with intelligent ANC and 24-bit Hi-Fi audio.',
+                'description' => '<p>Galaxy Buds2 Pro deliver crystal-clear Hi-Fi 24bit audio with intelligent active noise cancellation that adapts to your environment.</p><ul><li>Up to 5 hours playback, 18 hours with case</li><li>IPX7 water resistance</li><li>360 audio with head tracking</li></ul>',
+                'price' => 229.99, 'discount_price' => 159.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B0B4PSNMBK?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.5, 'rating_count' => 6321,
+                'is_deal' => true,
+                'images' => ['1527864550417-7fd91fc51a46', '1590658268037-6bf12165a8df'],
+            ],
+            [
+                'category' => 'electronics', 'brand' => 'sony',
+                'name' => 'Sony WH-1000XM5 Wireless Headphones', 'slug' => 'sony-wh-1000xm5', 'sku' => 'SNY-WH5',
+                'short_description' => 'Industry-leading noise cancellation with premium sound quality.',
+                'description' => '<p>The WH-1000XM5 headphones deliver exceptional sound quality with two processors controlling 8 microphones for unprecedented noise cancellation.</p><ul><li>Up to 30-hour battery life</li><li>Crystal clear hands-free calling</li><li>Multipoint connection to 2 devices</li></ul>',
+                'price' => 399.99, 'discount_price' => 328.00,
+                'affiliate_link' => 'https://www.amazon.com/dp/B09XS7JWHW?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.8, 'rating_count' => 24110,
+                'is_featured' => true, 'is_bestseller' => true,
+                'images' => ['1547082299-de196ea013d6', '1505740420928-5e560c06d30e'],
+            ],
+            [
+                'category' => 'electronics', 'brand' => 'bose',
+                'name' => 'Bose QuietComfort 45 Headphones', 'slug' => 'bose-quietcomfort-45', 'sku' => 'BOSE-QC45',
+                'short_description' => 'Quiet, comfortable, and effortless world-class noise cancellation.',
+                'description' => '<p>Bose QuietComfort 45 headphones balance acclaimed sound with a proprietary blend of noise-cancelling technologies.</p><ul><li>24-hour battery life</li><li>Adjustable EQ via Bose Music app</li><li>TriPort acoustic architecture</li></ul>',
+                'price' => 329.00, 'discount_price' => null,
+                'affiliate_link' => 'https://www.amazon.com/dp/B098FKXT8L?tag=youraffiliateid-20',
+                'rating' => 4.6, 'rating_count' => 15678,
+                'is_featured' => true,
+                'images' => ['1587825140708-dfaf72ae4b04', '1547082299-de196ea013d6'],
+            ],
+            [
+                'category' => 'computers-accessories', 'brand' => 'logitech',
+                'name' => 'Logitech MX Master 3S Mouse', 'slug' => 'logitech-mx-master-3s', 'sku' => 'LOG-MX3S',
+                'short_description' => 'Ultra-fast wireless performance mouse with quiet clicks.',
+                'description' => '<p>MX Master 3S takes the iconic MX experience to a new level with 8K DPI tracking, quiet clicks, and haptic-like scrolling.</p><ul><li>Works on any surface, even glass</li><li>USB-C quick charging</li><li>Connect up to 3 devices</li></ul>',
+                'price' => 99.99, 'discount_price' => 79.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B09HM94VDS?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.7, 'rating_count' => 9834,
+                'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1541185933-ef5d8ed016c2', '1517336714731-489689fd1ca8'],
+            ],
+            [
+                'category' => 'electronics', 'brand' => 'anker',
+                'name' => 'Anker 737 Power Bank (PowerCore 24K)', 'slug' => 'anker-737-power-bank', 'sku' => 'ANK-737',
+                'short_description' => '24,000mAh portable charger with 140W max output.',
+                'description' => '<p>The Anker 737 Power Bank charges a laptop, tablet, and phone all at once with its powerful 140W output.</p><ul><li>Smart digital display</li><li>Recharges to 100% in about 1 hour</li><li>Triple-port output</li></ul>',
+                'price' => 149.99, 'discount_price' => 99.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B09X7CVL15?tag=youraffiliateid-20',
+                'badge' => 'New', 'rating' => 4.6, 'rating_count' => 3201,
+                'is_deal' => true, 'is_new' => true,
+                'images' => ['1625723044792-44de16ccb4e9', '1508685096489-7aacd43bd3b1'],
+            ],
+            [
+                'category' => 'computers-accessories', 'brand' => 'apple',
+                'name' => 'Apple MacBook Air 13" (M2 Chip)', 'slug' => 'apple-macbook-air-m2', 'sku' => 'APL-MBA2',
+                'short_description' => 'Strikingly thin design with the M2 chip for exceptional performance.',
+                'description' => '<p>The redesigned MacBook Air combines a full-day battery life with the powerful M2 chip in a thin, fanless design.</p><ul><li>Up to 18 hours battery life</li><li>13.6-inch Liquid Retina display</li><li>1080p FaceTime HD camera</li></ul>',
+                'price' => 1099.00, 'discount_price' => 999.00,
+                'affiliate_link' => 'https://www.amazon.com/dp/B0B3C2R4NR?tag=youraffiliateid-20',
+                'badge' => "Amazon's Choice", 'rating' => 4.8, 'rating_count' => 12456,
+                'is_featured' => true, 'is_bestseller' => true,
+                'images' => ['1541807084-5c52b6b3adef', '1517336714731-489689fd1ca8'],
+            ],
+            [
+                'category' => 'computers-accessories', 'brand' => 'samsung',
+                'name' => 'Samsung 27" Odyssey Gaming Monitor', 'slug' => 'samsung-odyssey-gaming-monitor', 'sku' => 'SAM-ODY27',
+                'short_description' => '165Hz QHD curved gaming monitor with 1ms response time.',
+                'description' => '<p>Immerse yourself in the game with the Odyssey curved gaming monitor featuring a 165Hz refresh rate and 1ms response time.</p><ul><li>QHD 2560x1440 resolution</li><li>AMD FreeSync Premium</li><li>1000R curvature</li></ul>',
+                'price' => 399.99, 'discount_price' => 329.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B09N3941SS?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.5, 'rating_count' => 4521,
+                'is_deal' => true,
+                'images' => ['1587825140708-dfaf72ae4b04', '1541807084-5c52b6b3adef'],
+            ],
+            [
+                'category' => 'home-kitchen', 'brand' => null,
+                'name' => 'Instant Pot Duo 7-in-1 Electric Pressure Cooker', 'slug' => 'instant-pot-duo-7-in-1', 'sku' => 'IP-DUO7',
+                'short_description' => '7-in-1 pressure cooker, slow cooker, rice cooker, steamer and more.',
+                'description' => '<p>The Instant Pot Duo combines 7 kitchen appliances into one: pressure cooker, slow cooker, rice cooker, steamer, saute pan, yogurt maker and warmer.</p><ul><li>6 quart capacity, feeds up to 6 people</li><li>14 one-touch smart programs</li><li>Dishwasher-safe inner pot</li></ul>',
+                'price' => 99.95, 'discount_price' => 69.00,
+                'affiliate_link' => 'https://www.amazon.com/dp/B00FLYWNYQ?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.7, 'rating_count' => 156234,
+                'is_featured' => true, 'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1585237017125-24baf8d7406f', '1585659722983-3a675dabf23d'],
+            ],
+            [
+                'category' => 'home-kitchen', 'brand' => null,
+                'name' => 'Ninja Air Fryer Max XL', 'slug' => 'ninja-air-fryer-max-xl', 'sku' => 'NNJ-AFXL',
+                'short_description' => '5.5 quart air fryer that crisps, roasts, reheats and dehydrates.',
+                'description' => '<p>The Ninja Air Fryer Max XL cooks with rapid air circulation for hot, crispy air-fried food with little to no oil.</p><ul><li>5.5 quart ceramic-coated basket</li><li>Max Crisp Technology</li><li>Nonstick, dishwasher-safe parts</li></ul>',
+                'price' => 179.99, 'discount_price' => 129.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B07XLHT2SC?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.7, 'rating_count' => 62190,
+                'is_featured' => true, 'is_bestseller' => true,
+                'images' => ['1585659722983-3a675dabf23d', '1585237017125-24baf8d7406f'],
+            ],
+            [
+                'category' => 'fashion', 'brand' => 'nike',
+                'name' => 'Nike Air Max 270 Sneakers', 'slug' => 'nike-air-max-270', 'sku' => 'NIKE-AM270',
+                'short_description' => "Men's lifestyle shoes with the tallest Air unit yet for all-day comfort.",
+                'description' => '<p>The Nike Air Max 270 delivers visible cushioning under every step with a large Max Air unit.</p><ul><li>Foam midsole for lightweight cushioning</li><li>Mesh upper for breathability</li><li>Rubber waffle-pattern outsole</li></ul>',
+                'price' => 160.00, 'discount_price' => 119.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B07H8ZKQ4M?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.6, 'rating_count' => 8921,
+                'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1600185365483-26d7a4cc7519', '1542291026-7eec264c27ff'],
+            ],
+            [
+                'category' => 'fashion', 'brand' => 'nike',
+                'name' => "Nike Dri-FIT Men's T-Shirt", 'slug' => 'nike-dri-fit-tshirt', 'sku' => 'NIKE-DFT',
+                'short_description' => 'Sweat-wicking training tee for everyday comfort.',
+                'description' => '<p>The Nike Dri-FIT T-Shirt is made with sweat-wicking fabric to help you stay dry and comfortable.</p><ul><li>Standard fit</li><li>Ribbed crew neck</li><li>100% recycled polyester</li></ul>',
+                'price' => 35.00, 'discount_price' => null,
+                'affiliate_link' => 'https://www.amazon.com/dp/B07QXNVXFV?tag=youraffiliateid-20',
+                'badge' => 'New', 'rating' => 4.4, 'rating_count' => 2103,
+                'is_new' => true,
+                'images' => ['1521572163474-6864f9cf17ab', '1600185365483-26d7a4cc7519'],
+            ],
+            [
+                'category' => 'beauty-personal-care', 'brand' => null,
+                'name' => 'CeraVe Moisturizing Cream', 'slug' => 'cerave-moisturizing-cream', 'sku' => 'CRV-MC19',
+                'short_description' => '19 oz daily face and body moisturizer for normal to dry skin.',
+                'description' => '<p>Developed with dermatologists, CeraVe Moisturizing Cream provides 24-hour hydration with 3 essential ceramides.</p><ul><li>Non-comedogenic and fragrance-free</li><li>MVE Delivery Technology</li><li>Contains hyaluronic acid</li></ul>',
+                'price' => 19.99, 'discount_price' => 14.97,
+                'affiliate_link' => 'https://www.amazon.com/dp/B00TTD9BRC?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.8, 'rating_count' => 98452,
+                'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1620916566398-39f1143ab7be', '1522338140262-f46f5913618a'],
+            ],
+            [
+                'category' => 'beauty-personal-care', 'brand' => null,
+                'name' => 'Revlon One-Step Hair Dryer & Volumizer', 'slug' => 'revlon-one-step-hair-dryer', 'sku' => 'RVL-OS1',
+                'short_description' => 'Salon-quality blowout hot air brush in one step.',
+                'description' => '<p>This all-in-one hair tool dries and styles hair simultaneously, cutting your styling time in half.</p><ul><li>Unique oval brush design</li><li>Ionic technology reduces frizz</li><li>3 heat/speed settings</li></ul>',
+                'price' => 59.99, 'discount_price' => 39.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B01LSUQSB0?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.6, 'rating_count' => 74521,
+                'is_bestseller' => true,
+                'images' => ['1522338140262-f46f5913618a', '1620916566398-39f1143ab7be'],
+            ],
+            [
+                'category' => 'sports-outdoors', 'brand' => null,
+                'name' => 'Fitbit Charge 6 Fitness Tracker', 'slug' => 'fitbit-charge-6', 'sku' => 'FTB-CH6',
+                'short_description' => 'Advanced health and fitness tracker with built-in GPS.',
+                'description' => '<p>Fitbit Charge 6 combines Google apps, built-in GPS, and 40+ exercise modes with up to 7 days of battery life.</p><ul><li>Heart rate tracking</li><li>Google Maps & Wallet integration</li><li>Water resistant to 50m</li></ul>',
+                'price' => 159.95, 'discount_price' => 129.95,
+                'affiliate_link' => 'https://www.amazon.com/dp/B0CC6TLV5G?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.4, 'rating_count' => 5218,
+                'is_featured' => true, 'is_deal' => true,
+                'images' => ['1523275335684-37898b6baf30', '1523170335258-f5ed11844a49'],
+            ],
+            [
+                'category' => 'sports-outdoors', 'brand' => null,
+                'name' => 'YETI Rambler 20 oz Tumbler', 'slug' => 'yeti-rambler-tumbler', 'sku' => 'YETI-R20',
+                'short_description' => 'Vacuum insulated stainless steel tumbler with lid.',
+                'description' => '<p>The YETI Rambler Tumbler keeps drinks cold or hot for hours with double-wall vacuum insulation.</p><ul><li>18/8 stainless steel</li><li>No sweat exterior design</li><li>Dishwasher safe</li></ul>',
+                'price' => 38.00, 'discount_price' => null,
+                'affiliate_link' => 'https://www.amazon.com/dp/B07GJZM8QN?tag=youraffiliateid-20',
+                'badge' => 'New', 'rating' => 4.8, 'rating_count' => 42109,
+                'is_new' => true,
+                'images' => ['1508685096489-7aacd43bd3b1', '1461151304267-38535e780c79'],
+            ],
+            [
+                'category' => 'toys-games', 'brand' => 'lego',
+                'name' => 'LEGO Star Wars Millennium Falcon', 'slug' => 'lego-star-wars-millennium-falcon', 'sku' => 'LEGO-MF75257',
+                'short_description' => 'Iconic buildable starship model with minifigures.',
+                'description' => '<p>Recreate epic Star Wars adventures with this detailed Millennium Falcon set featuring rotating turrets and a detachable top panel.</p><ul><li>1,351 pieces</li><li>Includes 7 minifigures</li><li>Displays great on included stand</li></ul>',
+                'price' => 169.99, 'discount_price' => 144.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B08F7PTF53?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.9, 'rating_count' => 11023,
+                'is_featured' => true, 'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1587654780291-39c9404d746b', '1611996575749-79a3a250f948'],
+            ],
+            [
+                'category' => 'toys-games', 'brand' => null,
+                'name' => 'Monopoly Classic Board Game', 'slug' => 'monopoly-classic-board-game', 'sku' => 'HAS-MONO',
+                'short_description' => 'The classic family board game of buying, selling and trading.',
+                'description' => '<p>Play the classic Monopoly game and be the one who ends up on top with the most money after bankrupting your opponents.</p><ul><li>2-8 players</li><li>Ages 8+</li><li>Includes tokens, cards, play money</li></ul>',
+                'price' => 19.99, 'discount_price' => 14.99,
+                'affiliate_link' => 'https://www.amazon.com/dp/B00000IWM9?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.7, 'rating_count' => 32541,
+                'is_deal' => true,
+                'images' => ['1611996575749-79a3a250f948', '1587654780291-39c9404d746b'],
+            ],
+            [
+                'category' => 'books', 'brand' => null,
+                'name' => 'Atomic Habits by James Clear', 'slug' => 'atomic-habits-james-clear', 'sku' => 'BOOK-AH01',
+                'short_description' => 'An easy & proven way to build good habits & break bad ones.',
+                'description' => '<p>Atomic Habits offers a proven framework for improving every day through the power of tiny, incremental changes.</p><ul><li>Hardcover, 320 pages</li><li>#1 New York Times Bestseller</li></ul>',
+                'price' => 27.00, 'discount_price' => 13.59,
+                'affiliate_link' => 'https://www.amazon.com/dp/0735211299?tag=youraffiliateid-20',
+                'badge' => 'Best Seller', 'rating' => 4.8, 'rating_count' => 145210,
+                'is_featured' => true, 'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1495446815901-a7297e633e8d', '1544947950-fa07a98d237f'],
+            ],
+            [
+                'category' => 'books', 'brand' => null,
+                'name' => 'The Silent Patient', 'slug' => 'the-silent-patient-book', 'sku' => 'BOOK-TSP01',
+                'short_description' => 'A shocking psychological thriller by Alex Michaelides.',
+                'description' => '<p>A woman refuses to speak after allegedly murdering her husband, and a criminal psychotherapist becomes obsessed with uncovering her motive.</p><ul><li>Paperback, 336 pages</li><li>New York Times Bestseller</li></ul>',
+                'price' => 16.99, 'discount_price' => 10.49,
+                'affiliate_link' => 'https://www.amazon.com/dp/1250301696?tag=youraffiliateid-20',
+                'badge' => 'New', 'rating' => 4.6, 'rating_count' => 62345,
+                'is_new' => true,
+                'images' => ['1544947950-fa07a98d237f', '1495446815901-a7297e633e8d'],
+            ],
+            [
+                'category' => 'gift-cards', 'brand' => null,
+                'name' => 'Amazon Gift Card $50 (E-mail Delivery)', 'slug' => 'amazon-gift-card-50', 'sku' => 'GFT-050',
+                'short_description' => 'Instantly deliverable digital gift card, no expiration.',
+                'description' => '<p>Amazon.com Gift Cards never expire and can be redeemed towards millions of items across Amazon.</p><ul><li>Delivered by email in minutes</li><li>No fees</li><li>Redeemable towards millions of items</li></ul>',
+                'price' => 50.00, 'discount_price' => null,
+                'affiliate_link' => 'https://www.amazon.com/dp/B004LLIKVU?tag=youraffiliateid-20',
+                'rating' => 4.9, 'rating_count' => 205210,
+                'is_featured' => true, 'is_gift_card' => true,
+                'images' => ['1607344645866-009c320b63e0'],
+            ],
+            [
+                'category' => 'gift-cards', 'brand' => null,
+                'name' => 'Amazon Gift Card $100 (E-mail Delivery)', 'slug' => 'amazon-gift-card-100', 'sku' => 'GFT-100',
+                'short_description' => 'Instantly deliverable digital gift card, no expiration.',
+                'description' => '<p>Amazon.com Gift Cards never expire and can be redeemed towards millions of items across Amazon.</p><ul><li>Delivered by email in minutes</li><li>No fees</li><li>Redeemable towards millions of items</li></ul>',
+                'price' => 100.00, 'discount_price' => null,
+                'affiliate_link' => 'https://www.amazon.com/dp/B004LLIKVU?tag=youraffiliateid-20',
+                'rating' => 4.9, 'rating_count' => 205210,
+                'is_gift_card' => true,
+                'images' => ['1607344645866-009c320b63e0'],
+            ],
+            [
+                'category' => 'watches', 'brand' => 'apple',
+                'name' => 'Apple Watch Series 9 (GPS, 45mm)', 'slug' => 'apple-watch-series-9', 'sku' => 'APL-AWS9',
+                'short_description' => 'Advanced health features with the brightest Apple display yet.',
+                'description' => '<p>Apple Watch Series 9 introduces the new S9 chip, a magical new way to interact without touching the screen, and Precision Finding for iPhone.</p><ul><li>Blood oxygen and ECG apps</li><li>Always-on Retina display</li><li>Water resistant 50m</li></ul>',
+                'price' => 399.00, 'discount_price' => 349.00,
+                'affiliate_link' => 'https://www.amazon.com/dp/B0CHXBSY32?tag=youraffiliateid-20',
+                'badge' => "Amazon's Choice", 'rating' => 4.7, 'rating_count' => 18734,
+                'is_featured' => true, 'is_bestseller' => true, 'is_deal' => true,
+                'images' => ['1523275335684-37898b6baf30', '1461151304267-38535e780c79'],
+            ],
+            [
+                'category' => 'watches', 'brand' => null,
+                'name' => 'Fossil Gen 6 Smartwatch', 'slug' => 'fossil-gen-6-smartwatch', 'sku' => 'FSL-G6',
+                'short_description' => 'Wear OS smartwatch with heart rate, GPS and NFC payments.',
+                'description' => '<p>Fossil Gen 6 gives you smartwatch features you need with a battery that can last over 24 hours.</p><ul><li>Built-in speaker & mic</li><li>Wear OS by Google</li><li>Compatible with Android & iOS</li></ul>',
+                'price' => 255.00, 'discount_price' => 179.00,
+                'affiliate_link' => 'https://www.amazon.com/dp/B09FF2W3XJ?tag=youraffiliateid-20',
+                'badge' => 'Deal of the Day', 'rating' => 4.3, 'rating_count' => 3654,
+                'is_deal' => true, 'is_new' => true,
+                'images' => ['1523170335258-f5ed11844a49', '1523275335684-37898b6baf30'],
+            ],
+        ];
+
+        foreach ($products as $data) {
+            $images = $data['images'];
+            unset($data['images']);
+
+            $categoryId = $data['category'] ? Category::where('slug', $data['category'])->value('id') : null;
+            $brandId = $data['brand'] ? Brand::where('slug', $data['brand'])->value('id') : null;
+            unset($data['category'], $data['brand']);
+
+            $product = Product::updateOrCreate(
+                ['slug' => $data['slug']],
+                $data + [
+                    'category_id' => $categoryId,
+                    'brand_id' => $brandId,
+                    'stock_status' => 'in_stock',
+                    'status' => true,
+                    'views' => rand(50, 5000),
+                    'clicks' => rand(5, 500),
+                ]
+            );
+
+            $product->images()->delete();
+            foreach ($images as $i => $photoId) {
+                $product->images()->create([
+                    'image' => "https://images.unsplash.com/photo-{$photoId}?w=800&q=70",
+                    'is_primary' => $i === 0,
+                    'sort_order' => $i + 1,
+                ]);
+            }
+        }
+    }
+}
